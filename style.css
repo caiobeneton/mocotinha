@@ -62,3 +62,106 @@ section h2::after {
 .img-fluid {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
+#cardapio {
+    margin-top: 40px;
+}
+
+#produto {
+    margin-top: 60px;
+}
+
+.produto-card {
+  background-color: #ffffff; /* Fundo branco */
+  gap: 16px;                  /* Espaçamento interno */
+  border: 1px solid #e0e0e0;  /* Borda cinza clara */
+  border-radius: 8px;          /* Cantos arredondados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra suave */
+  overflow: hidden;            /* Para a imagem não "vazar" */
+  transition: box-shadow 0.3s ease; /* Efeito suave ao passar o mouse */
+  display: flex;               /* Usa flexbox para organizar o conteúdo interno */
+  flex-direction: column;      /* Organiza o conteúdo em coluna (imagem em cima, info embaixo) */
+}
+
+.produto-card:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra mais forte no hover */
+}
+
+.produto-image {
+  width: 100%;     /* Imagem ocupa 100% da largura do card */
+  height: auto;    /* Altura se ajusta automaticamente */
+  display: block;  /* Remove espaços extras da imagem */
+}
+
+.produto-info {
+  padding: 12px;   /* Espaçamento interno (texto e botão) */
+  flex-grow: 1;    /* Faz essa div crescer para preencher o espaço (útil se os cards tiverem alturas diferentes) */
+  display: flex;
+  flex-direction: column;
+}
+
+.produto-title {
+  font-size: 1.1rem; /* Tamanho do título */
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.produto-price {
+  font-size: 1.25rem; /* Tamanho do preço */
+  font-weight: bold;
+  color: #000;
+  margin-top: auto; /* Empurra o preço para baixo, alinhando os botões */
+  margin-bottom: 16px;
+}
+
+.produto-button {
+  display: block;         /* Botão como bloco (ocupa 100% da largura) */
+  background-color: #FF6600; /* Cor principal (laranja) */
+  color: #ffffff;         /* Texto branco */
+  text-align: center;     /* Texto centralizado */
+  padding: 12px;
+  text-decoration: none;  /* Sem sublinhado */
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.produto-button:hover {
+  background-color: #0056b3; /* Cor mais escura no hover */
+}
+
+
+/* ---- 2. Estilos do Grid (Layout Responsivo) ---- */
+
+.produto-grid {
+  display: grid;
+  gap: 50px; /* Espaçamento entre os cards */
+  padding: 24px; /* Espaçamento em volta de toda a grade */
+  
+  /* Padrão (Mobile-first): 1 coluna */
+  grid-template-columns: repeat(3, 1fr); 
+}
+
+.produto-grid h3{
+    text-transform: capitalize;
+    grid-column: span 3;
+    text-align: center;
+}
+
+/* Carousel: limitar altura e evitar distorção das imagens */
+#carouselExampleIndicators {
+    /* controlar a altura total do componente */
+    max-width: 100%;
+}
+#carouselExampleIndicators .carousel-item {
+    /* altura máxima do slide; ajuste conforme preferir */
+    height: 500px;
+}
+#carouselExampleIndicators .carousel-item img {
+    /* Mantém a imagem inteira visível sem recortar */
+    max-height: 100%;
+    max-width: 100%;
+    height: auto;
+}
